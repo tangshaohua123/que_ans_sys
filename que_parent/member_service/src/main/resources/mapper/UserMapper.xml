@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.ps.mapper.UserMapper">
+    <insert id="register" parameterType="com.ps.domain.User">
+        INSERT INTO USER ( NAME, phone, PASSWORD, integral )
+        VALUES
+	        ( #{name}, #{phone}, #{password}, 1000 )
+    </insert>
+    <select id="queryAllIntegral" resultType="com.ps.domain.Integral">
+        SELECT id, user_id as userId, addition,type FROM integral where user_id=#{id}
+    </select>
+    <update id="addCode">
+        update user set code=#{0} where id=#{1}
+    </update>
+    <select id="queryById" resultType="com.ps.domain.User">
+        select * from user where id=#{0}
+    </select>
+</mapper>

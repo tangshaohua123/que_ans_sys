@@ -1,0 +1,27 @@
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/que_ans
+    username: root
+    password: 123456
+    driver‐class‐name: com.mysql.jdbc.Driver
+    # 使用druid作为数据源
+    type: com.alibaba.druid.pool.DruidDataSource
+  application:
+    name: ansServer
+  kafka:
+    bootstrap-servers: localhost:9092
+mybatis:
+  type-aliases-package: com.ps.domain
+  mapper-locations: /mapper/**/*.xml
+
+dubbo:
+  protocol:
+    name: dubbo
+    port: 8882
+  registry:
+    address: zookeeper://127.0.0.1:2181
+  scan:
+    base-packages: com.ps.service
+
+server:
+  port: 8082

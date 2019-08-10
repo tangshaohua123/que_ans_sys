@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.ps.mapper.QunaireMapper">
+    <insert id="addTitle" parameterType="question">
+        INSERT INTO question (title,integral)
+        VALUES
+        #{title},#{integral}
+    </insert>
+    <select id="queryTitle" parameterType="question">
+        select id from question where title=#{title}
+    </select>
+    <insert id="addQunaire" parameterType="qNaire">
+        INSERT INTO details (number,question,title_id)
+        VALUES
+        <foreach item="item" index="index" collection="list"
+                 separator=",">
+            (#{item.number},#{item.question},#{item.titleId})
+        </foreach>
+    </insert>
+    <select id="getTitle" resultType="question">
+        select * from question where id=#{0}
+    </select>
+    <select id="getQue" resultType="qNaire">
+        select id,number,question,title_id as titleId from details where title_id=#{0}
+    </select>
+    <insert id="answer" parameterType="quResult">
+        INSERT INTO result (detail_id,user_id,answer)
+        VALUES
+        <foreach item="item" index="index" collection="list"
+                 separator=",">
+            (#{item.detailId},#{item.userId},#{item.answer})
+        </foreach>
+    </insert>
+</mapper>

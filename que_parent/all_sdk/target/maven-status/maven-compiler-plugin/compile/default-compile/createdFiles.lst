@@ -1,0 +1,6 @@
+com\ps\App.class
+com\ps\domain\Integral.class
+com\ps\domain\Result.class
+com\ps\domain\User.class
+com\ps\domain\issue.class
+com\ps\service\member_service\UserService.class

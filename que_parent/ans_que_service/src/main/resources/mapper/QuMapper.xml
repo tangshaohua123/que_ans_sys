@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.ps.mapper.QuMapper">
+    <select id="queryAll" resultType="com.ps.domain.Issue">
+        SELECT id,description,answer_id as answerId,integral,user_id as userId FROM issue
+    </select>
+    <select id="queryQueById" resultType="com.ps.domain.Answer">
+        SELECT id,issue_id as issueId,reply as answer,user_id as userId FROM response where issue_id=#{0}
+    </select>
+    <insert id="addAns" parameterType="issue">
+        INSERT INTO issue ( description, integral, user_id )
+        VALUES
+            ( #{description}, #{integral}, #{userId} )
+    </insert>
+    <insert id="answer" parameterType="answer">
+        INSERT INTO response(issue_id, reply,user_id) VALUES (#{issueId}, #{answer}, #{userId})
+    </insert>
+    <update id="adopt" parameterType="answer">
+        UPDATE issue SET answer_id = #{id} WHERE id = #{issueId}
+    </update>
+    <select id="queryIntegral" resultType="int">
+        SELECT integral FROM issue where answer_id = #{id}
+    </select>
+</mapper>

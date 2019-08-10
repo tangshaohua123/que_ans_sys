@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.ps.mapper.QunaireMapper">
+    <insert id="addTitle" parameterType="com.ps.domain.Question">
+        INSERT INTO question (title,integral)
+        VALUES
+        #{title},#{integral}
+    </insert>
+    <select id="queryTitle" parameterType="com.ps.domain.Question" resultType="int">
+        select id from question where title=#{title}
+    </select>
+    <insert id="addQunaire" parameterType="com.ps.domain.QNaire">
+        INSERT INTO details (number,question,title_id)
+        VALUES
+        <foreach item="item" index="index" collection="list"
+                 separator=",">
+            (#{item.number},#{item.question},#{item.titleId})
+        </foreach>
+    </insert>
+    <select id="getTitle" resultType="com.ps.domain.Question">
+        select * from question where id=#{0}
+    </select>
+    <select id="getQue" resultType="com.ps.domain.QNaire">
+        select id,number,question,title_id as titleId from details where title_id=#{0}
+    </select>
+    <insert id="answer" parameterType="com.ps.domain.QuResult">
+        INSERT INTO result (detail_id,user_id,answer)
+        VALUES
+        <foreach item="item" index="index" collection="list"
+                 separator=",">
+            (#{item.detailId},#{item.userId},#{item.answer})
+        </foreach>
+    </insert>
+    <select id="queryShop" resultType="com.ps.domain.Shop">
+        select * from shop where id=#{0}
+    </select>
+    <select id="getOrder" resultType="com.ps.domain.Order">
+        select id from order where user_id=#{0} and shop_id=#{1}
+    </select>
+    <insert id="addInte" parameterType="int">
+
+    </insert>
+    <insert id="flow" parameterType="int">
+
+    </insert>
+</mapper>

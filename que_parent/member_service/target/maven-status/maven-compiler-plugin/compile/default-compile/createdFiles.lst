@@ -1,0 +1,3 @@
+com\ps\App.class
+com\ps\service\impl\UserServiceImpl.class
+com\ps\mapper\UserMapper.class
