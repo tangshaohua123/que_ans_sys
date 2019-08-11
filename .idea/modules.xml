@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/que_parent/all_sdk/all_sdk.iml" filepath="$PROJECT_DIR$/que_parent/all_sdk/all_sdk.iml" />
+      <module fileurl="file://$PROJECT_DIR$/que_parent/ans_que_service/ans_que_service.iml" filepath="$PROJECT_DIR$/que_parent/ans_que_service/ans_que_service.iml" />
+      <module fileurl="file://$PROJECT_DIR$/que_parent/h5_api/h5_api.iml" filepath="$PROJECT_DIR$/que_parent/h5_api/h5_api.iml" />
+      <module fileurl="file://$PROJECT_DIR$/que_parent/marketing_service/marketing_service.iml" filepath="$PROJECT_DIR$/que_parent/marketing_service/marketing_service.iml" />
+      <module fileurl="file://$PROJECT_DIR$/que_parent/member_service/member_service.iml" filepath="$PROJECT_DIR$/que_parent/member_service/member_service.iml" />
+      <module fileurl="file://$PROJECT_DIR$/que_parent/que_parent.iml" filepath="$PROJECT_DIR$/que_parent/que_parent.iml" />
+    </modules>
+  </component>
+</project>

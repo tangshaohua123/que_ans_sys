@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="h5_api" />
+        <module name="ans_que_service" />
+        <module name="marketing_service" />
+        <module name="member_service" />
+        <module name="all_sdk" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="all_sdk" target="1.8" />
+      <module name="ans_que_service" target="1.8" />
+      <module name="h5_api" target="1.8" />
+      <module name="marketing_service" target="1.8" />
+      <module name="member_service" target="1.8" />
+      <module name="que_parent" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="all_sdk" options="-parameters" />
+      <module name="ans_que_service" options="-parameters" />
+      <module name="h5_api" options="-parameters" />
+      <module name="marketing_service" options="-parameters" />
+      <module name="member_service" options="-parameters" />
+    </option>
+  </component>
+</project>
